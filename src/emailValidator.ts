@@ -1,7 +1,8 @@
 
 export function emailChecker  (email:string) : boolean {
-    if(!email.includes('@')) return false
     let validate = true;
+    validate = checkContainAt(email, validate);
+    if(!validate)return false;
     let index = email.indexOf('@');
     validate = checkPointConditions(index, email, validate);
     if(!validate)return false;
@@ -11,6 +12,13 @@ export function emailChecker  (email:string) : boolean {
 
     return validate;
 }
+function checkContainAt(email: string, validate: boolean) {
+    if (!email.includes('@')) {
+        validate = false;
+    }
+    return validate;
+}
+
 function checkTextBeforAfter(email: string, index: number, validate: boolean) {
     if (email.charAt(index - 1) === "" || email.charAt(index + 1) === "") {
         validate = false;
