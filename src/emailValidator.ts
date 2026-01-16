@@ -7,12 +7,17 @@ export function emailChecker  (email:string) : boolean {
     if(!validate)return false;
     validate = checkSpaceCondition(email, validate);
     if(!validate)return false;
-    if(email.charAt(index-1) === "" || email.charAt(index+1) === ""){
-        validate = false;
-    }
+    validate = checkTextBeforAfter(email, index, validate);
 
     return validate;
 }
+function checkTextBeforAfter(email: string, index: number, validate: boolean) {
+    if (email.charAt(index - 1) === "" || email.charAt(index + 1) === "") {
+        validate = false;
+    }
+    return validate;
+}
+
 function checkSpaceCondition(email: string, validate: boolean) : boolean{
     if (email.includes(' ')) {
         validate = false;
