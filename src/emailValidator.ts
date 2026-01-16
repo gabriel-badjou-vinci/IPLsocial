@@ -1,4 +1,4 @@
 
-export function emailChecker  (password:string) : boolean {
+export function emailChecker  (email:string) : boolean {
     return true;
 }
