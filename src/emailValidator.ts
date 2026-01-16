@@ -41,8 +41,5 @@ function checkPointConditions(index: number, email: string, validate: boolean) :
             break;
         }
     }
-    if (!hasPoint) {
-        validate = false;
-    }
     return validate;
 }
