@@ -21,6 +21,11 @@ it('should return false when there is no . in the domain name  ', () => {
         expect(result).toBe(false);
   });
 
+  it('should return false when there is a point in the last character  ', () => {
+        const result = emailChecker("gabriel.badjou@student.vinci.be.");
+        expect(result).toBe(false);
+  });
+
    it('should return false when there is a space in the email', () => {
         const result1 = emailChecker("gabriel.badjou@ student.vinci.be");
         expect(result1).toBe(false);
