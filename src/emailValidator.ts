@@ -4,7 +4,12 @@ export function emailChecker  (email:string) : boolean {
     let validate = false;
     let index = email.indexOf('@');
     validate = checkPointConditions(index, email, validate);
-    if(email.includes(' ')){
+    validate = checkSpaceCondition(email, validate);
+    return validate;
+}
+
+function checkSpaceCondition(email: string, validate: boolean) : boolean{
+    if (email.includes(' ')) {
         validate = false;
     }
     return validate;
