@@ -28,7 +28,7 @@ it('should return false when there is no . in the domain name  ', () => {
         expect(result2).toBe(false);
   });
 
-  it('should return false when there is nothing before or after the @', () => {
+  it('should return false when there is no text before or after the @', () => {
         const result1 = emailChecker("@student.vinci.be");
         expect(result1).toBe(false);
         const result2 = emailChecker("gabriel.badjou@");
