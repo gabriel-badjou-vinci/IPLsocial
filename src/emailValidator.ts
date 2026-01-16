@@ -4,7 +4,7 @@ export function emailChecker  (email:string) : boolean {
     let validate = false;
     let index = email.indexOf('@');
     validate = checkPointConditions(index, email, validate);
-    if(email === "gabriel.badjou@ student.vinci.be" || email === "gabriel.badjou @student.vinci.be"){
+    if(email.includes(' ')){
         validate = false;
     }
     return validate;
