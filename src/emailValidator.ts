@@ -4,7 +4,17 @@ export function emailChecker  (email:string) : boolean {
     let validate = false;
     let index = email.indexOf('@');
     validate = checkPointConditions(index, email, validate);
+    if(!validate)return false;
     validate = checkSpaceCondition(email, validate);
+    if(!validate)return false;
+    validate = checkTextBeforAfter(email, index, validate);
+
+    return validate;
+}
+function checkTextBeforAfter(email: string, index: number, validate: boolean) {
+    if (email.charAt(index - 1) === "" || email.charAt(index + 1) === "") {
+        validate = false;
+    }
     return validate;
 }
 
