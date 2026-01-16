@@ -5,6 +5,9 @@ export function emailChecker  (email:string) : boolean {
     let index = email.indexOf('@');
     validate = checkPointConditions(index, email, validate);
     validate = checkSpaceCondition(email, validate);
+    if(email === "@student.vinci.be" || email === "gabriel.badjou@"){
+        validate = false;
+    }
     return validate;
 }
 
