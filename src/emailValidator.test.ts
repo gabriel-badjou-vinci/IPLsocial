@@ -10,6 +10,10 @@ describe('Check an email', () => {
         const result = emailChecker("gabriel.badjoustudent.vinci.be");
         expect(result).toBe(false);
   });
-
+  
+it('should return false when there is no . in the domain name  ', () => {
+        const result = emailChecker("gabriel.badjou@studentvincibe");
+        expect(result).toBe(false);
+  });
 
 });
