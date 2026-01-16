@@ -32,8 +32,6 @@ function checkPointConditions(index: number, email: string, validate: boolean) :
             break;
         }
     }
-    if(email.endsWith(".")){
-        validate = false;
-    }
+    
     return validate;
 }
