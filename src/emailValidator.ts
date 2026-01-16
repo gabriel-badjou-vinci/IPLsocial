@@ -34,10 +34,9 @@ function checkSpaceCondition(email: string, validate: boolean) : boolean{
 }
 
 function checkPointConditions(index: number, email: string, validate: boolean) : boolean{
-    let hasPoint = false;
-    for (let i = index + 1; i < email.length; i++) {
+    for (let i = index; i < email.length; i++) {
         if (email[i] === '.' && email[i + 1] !== undefined) {
-            hasPoint = true;
+            validate = true;
             break;
         }
     }
