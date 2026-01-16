@@ -6,5 +6,10 @@ describe('Check an email', () => {
         expect(result).toBe(true);
   });
 
+  it('should return false when there is no @ ', () => {
+        const result = emailChecker("gabriel.badjoustudent.vinci.be");
+        expect(result).toBe(false);
+  });
+
 
 });
