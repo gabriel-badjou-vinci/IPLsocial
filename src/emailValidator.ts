@@ -1,7 +1,7 @@
 
 export function emailChecker  (email:string) : boolean {
     if(!email.includes('@')) return false
-    let validate = false;
+    let validate = true;
     let index = email.indexOf('@');
     validate = checkPointConditions(index, email, validate);
     if(!validate)return false;
@@ -26,11 +26,15 @@ function checkSpaceCondition(email: string, validate: boolean) : boolean{
 }
 
 function checkPointConditions(index: number, email: string, validate: boolean) : boolean{
-    for (let i = index; i < email.length; i++) {
+    let hasPoint = false;
+    for (let i = index + 1; i < email.length; i++) {
         if (email[i] === '.' && email[i + 1] !== undefined) {
-            validate = true;
+            hasPoint = true;
             break;
         }
+    }
+    if (!hasPoint) {
+        validate = false;
     }
     return validate;
 }
